@@ -50,9 +50,12 @@ const Hero = () => {
     '/images/negocio 1.jpg',
     '/images/negocio 2.jpg',
     '/images/negocio 3.jpg',
-    '/images/negocio 5.jpg',
+    '/images/negocio7.jpg',
     '/images/negocio 4.jpg',
-    '/images/negocio 6.jpg',
+    '/images/negocio 10.jpg',
+    '/images/negocio 8.jpg',
+    '/images/negocio 9.jpg',
+    '/images/negocio 11.jpg',
   ];
 
   return (

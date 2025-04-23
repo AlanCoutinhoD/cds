@@ -22,16 +22,21 @@ const NavContainer = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.div`
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const LogoImage = styled.img`
+  height: 50px;
+  width: auto;
+`;
+
+const LogoText = styled.div`
   font-size: 1.5rem;
   color: #1a47cb;
   font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 `;
 
 const NavLinks = styled.div`
@@ -166,7 +171,10 @@ const Navbar = () => {
       boxShadow: scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none'
     }}>
       <NavContainer>
-        <Logo>Centro de Soluciones Computadoras Electronicas</Logo>
+        <LogoContainer>
+          <LogoImage src="/images/cse-logo.jpg" alt="CSE Logo" />
+          <LogoText>Centro de Soluciones de Computadoras Electronicas</LogoText>
+        </LogoContainer>
         <NavLinks>
           <NavItem 
             onMouseEnter={() => setActiveMenu('servicios')}
