@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PhoneIcon from '@mui/icons-material/Phone';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Nav = styled.nav`
   padding: 1rem 4rem;
@@ -12,6 +13,10 @@ const Nav = styled.nav`
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `;
 
 const NavContainer = styled.div`
@@ -26,6 +31,12 @@ const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const LogoImage = styled.img`
@@ -37,12 +48,20 @@ const LogoText = styled.div`
   font-size: 1.5rem;
   color: #1a47cb;
   font-weight: bold;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const NavLinks = styled.div`
   display: flex;
   gap: 2.5rem;
   align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavLink = styled.a`
@@ -132,9 +151,38 @@ const SubMenuItem = styled.a`
   }
 `;
 
+const MobileMenuButton = styled.button`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #1a47cb;
+    cursor: pointer;
+  }
+`;
+
+const MobileMenu = styled.div`
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: ${props => props.isOpen ? 'flex' : 'none'};
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+`;
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -175,6 +223,11 @@ const Navbar = () => {
           <LogoImage src="/images/cse-logo.jpg" alt="CSE Logo" />
           <LogoText>Centro de Soluciones de Computadoras Electronicas</LogoText>
         </LogoContainer>
+        
+        <MobileMenuButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <MenuIcon />
+        </MobileMenuButton>
+
         <NavLinks>
           <NavItem 
             onMouseEnter={() => setActiveMenu('servicios')}
@@ -210,6 +263,16 @@ const Navbar = () => {
             961 372 3777
           </ContactButton>
         </NavLinks>
+
+        <MobileMenu isOpen={isMobileMenuOpen}>
+          <NavLink href="#servicios">Servicios</NavLink>
+          <NavLink href="#productos">Productos</NavLink>
+          <NavLink href="#ubicacion">Ubicación</NavLink>
+          <ContactButton>
+            <PhoneIcon className="icon" />
+            961 372 3777
+          </ContactButton>
+        </MobileMenu>
       </NavContainer>
     </Nav>
   );

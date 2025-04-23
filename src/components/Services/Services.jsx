@@ -10,11 +10,31 @@ import WifiIcon from '@mui/icons-material/Wifi';
 const ServicesSection = styled.section`
   padding: 4rem;
   text-align: center;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const Title = styled.h2`
   color: #1a47cb;
   margin-bottom: 2rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+`;
+
+const Description = styled.p`
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
 `;
 
 const ServicesGrid = styled.div`
@@ -22,6 +42,15 @@ const ServicesGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 `;
 
 const ServiceCard = styled.div`
@@ -35,9 +64,44 @@ const ServiceCard = styled.div`
   display: flex;
   flex-direction: column;
   
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    height: auto;
+    min-height: 400px;
+  }
+  
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 5px 20px rgba(26, 71, 203, 0.2);
+  }
+
+  .icon-container {
+    color: #1a47cb;
+    margin: 1rem 0;
+    
+    .icon {
+      font-size: 2.5rem;
+    }
+  }
+
+  h3 {
+    color: #1a47cb;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  p {
+    color: #666;
+    line-height: 1.6;
+    flex-grow: 1;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -102,10 +166,12 @@ const Services = () => {
   return (
     <ServicesSection id="servicios">
       <Title>Soluciones Completas para tus Dispositivos</Title>
-      <p>Ofrecemos una amplia gama de servicios de reparación y mantenimiento para todo tipo de dispositivos electrónicos.</p>
+      <Description>
+        Ofrecemos una amplia gama de servicios de reparación y mantenimiento para todo tipo de dispositivos electrónicos.
+      </Description>
       <ServicesGrid>
         {services.map((service, index) => (
-          <ServiceCard key={index}>
+          <ServiceCard key={index} data-aos="fade-up" data-aos-delay={index * 100}>
             <ServiceImage>
               <img src={service.image} alt={service.title} />
             </ServiceImage>

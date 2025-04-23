@@ -8,6 +8,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 const ContactSection = styled.section`
   padding: 4rem;
   background-color: #f8f9ff;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -16,12 +20,22 @@ const ContactContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 `;
 
 const ContactInfo = styled.div`
   h2 {
     color: #1a47cb;
     margin-bottom: 2rem;
+    
+    @media (max-width: 768px) {
+      text-align: center;
+      font-size: 1.8rem;
+    }
   }
 `;
 
@@ -47,6 +61,14 @@ const ContactItem = styled.div`
       text-decoration: underline;
     }
   }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    
+    p {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 const MapContainer = styled.div`
@@ -60,6 +82,10 @@ const MapContainer = styled.div`
     width: 100%;
     height: 100%;
     border: none;
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
   }
 `;
 

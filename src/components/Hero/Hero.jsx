@@ -10,22 +10,41 @@ const HeroSection = styled.section`
   height: 600px;
   position: relative;
   overflow: hidden;
-  margin-top: 80px; // Añadir espacio para el navbar
+  margin-top: 80px;
+
+  @media (max-width: 768px) {
+    height: 400px;
+    margin-top: 150px; // Aumentado de 60px a 80px
+  }
 `;
 
 const CarouselContainer = styled.div`
   width: 100%;
   height: 100%;
 
-  .slick-slide img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
+  .slick-slider, .slick-list, .slick-track {
+    height: 100%;
+  }
+
+  .slick-slide {
+    > div {
+      height: 100%;
+    }
+    
+    img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      
+      @media (max-width: 768px) {
+        height: 400px;
+      }
+    }
   }
 
   .slick-dots {
     bottom: 20px;
-    z-index: 10; // Asegurar que los puntos estén sobre la imagen
+    z-index: 10;
     
     li button:before {
       color: white;

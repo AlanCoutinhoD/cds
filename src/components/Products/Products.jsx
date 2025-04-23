@@ -5,60 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const ProductsSection = styled.section`
-  padding: 4rem;
-  background-color: #f8f9ff;
-  max-width: 1400px;
-  margin: 0 auto;
-`;
-
-const ProductCard = styled.div`
-  margin: 0 1rem; // Reducido el margen horizontal
-  padding: 1.5rem;
-  border-radius: 10px;
-  background: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  height: 600px;
-  width: 240px; // Ancho reducido para acomodar 5 tarjetas
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto; // Centrar la tarjeta
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(26, 71, 203, 0.2);
-  }
-
-  h3 {
-    margin: 1rem 0;
-    color: #1a47cb;
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-
-  p {
-    color: #666;
-    line-height: 1.5;
-    flex-grow: 1;
-    font-size: 1rem;
-  }
-`;
-
-const ProductImage = styled.div`
-  height: 400px; // Altura aumentada para la imagen
-  background: #f5f5f5;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  padding: 2rem;
+  @media (max-width: 768px) {
     padding: 1rem;
   }
 `;
@@ -67,11 +15,19 @@ const Title = styled.h2`
   color: #1a47cb;
   text-align: center;
   margin-bottom: 1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const Subtitle = styled.p`
   text-align: center;
   margin-bottom: 3rem;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const FilterButtons = styled.div`
@@ -79,6 +35,11 @@ const FilterButtons = styled.div`
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 `;
 
 const FilterButton = styled.button`
@@ -91,10 +52,84 @@ const FilterButton = styled.button`
   transition: all 0.3s ease;
   font-weight: 500;
 
+  @media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
   &:hover {
     background-color: #1a47cb;
     color: white;
     transform: translateY(-2px);
+  }
+`;
+
+const ProductCard = styled.div`
+  margin: 0 1rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 600px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    height: 500px;
+    width: 220px;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(26, 71, 203, 0.2);
+  }
+
+  h3 {
+    margin: 1rem 0;
+    color: #1a47cb;
+    font-size: 1.3rem;
+    font-weight: bold;
+    
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  p {
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1;
+    font-size: 1rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+`;
+
+const ProductImage = styled.div`
+  height: 400px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1rem;
   }
 `;
 
@@ -105,7 +140,7 @@ const Products = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5, // Cambiado de 3 a 5
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
