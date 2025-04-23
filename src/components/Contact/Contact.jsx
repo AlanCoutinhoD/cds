@@ -8,10 +8,31 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 const ContactSection = styled.section`
   padding: 4rem;
   background-color: #f8f9ff;
+  margin-bottom: 60px; // Añadido margen inferior
   
   @media (max-width: 768px) {
     padding: 2rem 1rem;
   }
+`;
+
+const PageContainer = styled.div`
+  position: relative;
+  min-height: 100vh;
+`;
+
+const MainContent = styled.div`
+  padding-bottom: 60px; // Espacio para el footer
+`;
+
+const Footer = styled.footer`
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1a47cb;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 `;
 
 const ContactContainer = styled.div`
@@ -88,6 +109,10 @@ const MapContainer = styled.div`
     height: 300px;
   }
 `;
+
+
+
+// Eliminar los styled components PageContainer, MainContent y Footer
 
 const Contact = () => {
   return (

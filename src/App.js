@@ -7,7 +7,7 @@ import Hero from './components/Hero/Hero';
 import Services from './components/Services/Services';
 import Products from './components/Products/Products';
 import Location from './components/Location/Location';
-
+import Footer from './components/Footer/Footer';
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -53,6 +53,7 @@ function App() {
       <Services data-aos="fade-up" />
       <Products data-aos="fade-up" />
       <Location data-aos="fade-up" />
+      <Footer />
     </>
   );
 }

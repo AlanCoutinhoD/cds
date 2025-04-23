@@ -201,16 +201,16 @@ const Navbar = () => {
   }, []);
 
   const serviciosMenu = [
-    { title: 'Reparación de Celulares', href: '#celulares' },
-    { title: 'Servicio de Laptops', href: '#laptops' },
-    { title: 'Reparación de Tablets', href: '#tablets' },
-    { title: 'Mantenimiento de PC', href: '#pc' },
+    { title: 'REPARACION DE CELULARES', href: '#celulares' },
+    { title: 'SERVICIO DE LAPTOPS', href: '#laptops' },
+    { title: 'REPARACION DE TABLETS', href: '#tablets' },
+    { title: 'MANTENIMIENTO DE PC', href: '#pc' },
   ];
 
   const productosMenu = [
-    { title: 'Accesorios', href: '#accesorios' },
-    { title: 'Repuestos', href: '#repuestos' },
-    { title: 'Periféricos', href: '#perifericos' },
+    { title: 'ACCESORIOS', href: '#accesorios' },
+    { title: 'REPUESTOS', href: '#repuestos' },
+    { title: 'PERIFETICOS', href: '#perifericos' },
   ];
 
   return (
@@ -221,7 +221,7 @@ const Navbar = () => {
       <NavContainer>
         <LogoContainer>
           <LogoImage src="/images/cse-logo.jpg" alt="CSE Logo" />
-          <LogoText>Centro de Soluciones de Computadoras Electronicas</LogoText>
+          <LogoText>CENTRO DE SOLUCIONES DE COMPUTADORAS ELECTRONICOS</LogoText>
         </LogoContainer>
         
         <MobileMenuButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -233,7 +233,7 @@ const Navbar = () => {
             onMouseEnter={() => setActiveMenu('servicios')}
             onMouseLeave={() => setActiveMenu(null)}
           >
-            <NavLink>Servicios <KeyboardArrowDownIcon /></NavLink>
+            <NavLink>SERVICIOS<KeyboardArrowDownIcon /></NavLink>
             <SubMenu isVisible={activeMenu === 'servicios'}>
               {serviciosMenu.map((item, index) => (
                 <SubMenuItem key={index} href={item.href}>
@@ -247,7 +247,7 @@ const Navbar = () => {
             onMouseEnter={() => setActiveMenu('productos')}
             onMouseLeave={() => setActiveMenu(null)}
           >
-            <NavLink>Productos <KeyboardArrowDownIcon /></NavLink>
+            <NavLink>PRODUCTOS<KeyboardArrowDownIcon /></NavLink>
             <SubMenu isVisible={activeMenu === 'productos'}>
               {productosMenu.map((item, index) => (
                 <SubMenuItem key={index} href={item.href}>
@@ -257,7 +257,7 @@ const Navbar = () => {
             </SubMenu>
           </NavItem>
 
-          <NavLink href="#ubicacion">Ubicación</NavLink>
+          <NavLink href="#ubicacion">UBICACION</NavLink>
           <ContactButton>
             <PhoneIcon className="icon" />
             961 372 3777
@@ -265,9 +265,9 @@ const Navbar = () => {
         </NavLinks>
 
         <MobileMenu isOpen={isMobileMenuOpen}>
-          <NavLink href="#servicios">Servicios</NavLink>
-          <NavLink href="#productos">Productos</NavLink>
-          <NavLink href="#ubicacion">Ubicación</NavLink>
+          <NavLink href="#servicios">SERVICIOS</NavLink>
+          <NavLink href="#productos">PRODUCTOS</NavLink>
+          <NavLink href="#ubicacion">UBICACION</NavLink>
           <ContactButton>
             <PhoneIcon className="icon" />
             961 372 3777
