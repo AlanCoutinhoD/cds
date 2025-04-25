@@ -25,27 +25,26 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 3rem; // Añadido gap para separar el logo del resto
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex: 1; // Añadido para dar más espacio al logo
+  max-width: 50%; // Limitar el ancho máximo
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 100%;
   }
 `;
 
-const LogoImage = styled.img`
-  height: 50px;
-  width: auto;
-`;
-
 const LogoText = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.3rem; // Reducido ligeramente el tamaño
   color: #1a47cb;
   font-weight: bold;
   
@@ -279,3 +278,9 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const LogoImage = styled.img`
+  height: 50px;
+  width: auto;
+  margin-right: 1rem;
+`;
